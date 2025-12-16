@@ -1,0 +1,78 @@
+Stored_User_name ="Karthick"
+Stored_User_id = 432109872
+Stored_Pass = "Karthick@2322!"
+Stored_balance = 10000
+
+user_id=int(input("Enter your user id : "))
+user_pass=input("Enter your password : ")
+
+if user_id==Stored_User_id and user_pass==Stored_Pass :
+    print("""
+          Welcome Mr.Karthick!
+          How may I help you?
+
+          1.Deposit
+          2.Withdraw
+          3.Mini Statement
+          4.Transfer
+          """)
+    process=int(input("Enter your option : "))
+    if process==1:
+        print("""
+               Wlecome to the Deposit Section
+              """)
+        deposit_amount =int(input("Enter the deposit amount : "))
+        deposit_total = Stored_balance+deposit_amount
+        #Stored_total = deposit_total
+        print(f"""Amount Deposited Successfully.
+              Your current balance : {deposit_total}
+              """)
+    elif process==2:
+        print("""
+               Welcome to the Withdraw Section
+              """)
+        withdraw_amount = int(input("Enter the withdrawal amount : "))
+        if withdraw_amount>9000:
+            print("Can't processing your the withdraw amount.")
+        else:
+            withdraw_balance = Stored_balance-withdraw_amount
+            print(f"""
+                   Amount withdraw Successfully.
+                   Your current balance : {withdraw_balance}
+                   """)
+    elif process==3:
+        print(f"""
+               Welcome to the Mini Statement
+              ------------------------------------------------------------
+                               MINI STATEMENT
+              ------------------------------------------------------------
+              Accountant_name  : Mr.Karthick
+
+              Age              : 27
+
+              Account_number   : 987654321
+
+              Branch           : Kakaveri
+
+              IFSC Code        : IDIB098765
+
+              Current_Balance  : {Stored_balance}
+              ------------------------------------------------------------
+              """)
+    elif process==4:
+         print("Welcome to the Transfer Section")
+         transfer_no=input("Enter the account number : ")
+         transfer_name=input("Enter the accountant name : ")
+         transfer_ifsc=input("Enter the IFSC number : ")
+         transfer_amount=int(input("Enter the amount : "))
+         if transfer_amount>Stored_amount-1000:
+                  print("Please Enter Valid amount.")
+         else:
+             transfer_balance = Stored_amount-tranfer_amount
+              print(f"""
+                Amount Transfered Successfully.
+                Your current balance :{transfer_balance}
+                """)
+
+else:
+     print("Please Enter valid userId and Password")
