@@ -1,0 +1,45 @@
+print("MEC Super Market")
+name = input("Enter your name : ")
+age = float(input("Enter your age : "))
+phone = int(input("Enter your Mobile number : "))
+print(f"Welcome {name} to our MEC Super Market.")
+
+print("""
+---- Available items ----
+ 1. Rice-70/Kg
+ 2. Dhal-65/kg
+ 3. Oil-165/1 Litre packet
+ 4. Curd-10/packet(150 ml)
+ 5. Dairy Milk-50"
+ """)
+rice = float(input("Enter quantity for rice : "))
+dhal = float(input("Enter quantity for dhal : "))
+oil = int(input("Enter quantity for oil : "))
+curd = int(input("Enter quantity for curd : "))
+dairy = int(input("Enter quantity for dairy milk : "))
+total=(70*rice)+(65*dhal)+(165*oil)+(curd*10)+(dairy*50)
+print(f"Your Grand total {total}")
+if(total>=500):
+    print("""
+     Welcome to the Card Section!
+     Your grand total is above 499/-.So pay through Card only
+     """)
+    bank=input("Enter Bank name : ")
+    grandwithgst=((0.18)*total)+total #inc gst(18%) 
+    print(f"Your Grand total : {grandwithgst} (include GST).")
+    print("""
+          Thank you for choosing our supermarket.
+          We truly value your trust and support.!
+          """)
+    
+else:
+    print("Welcome to the Cash Section! ")
+    amount=int(input("Enter your amount : "))
+    rem=amount-total
+    print(f"Your Remaining {rem}")
+    print("""
+          Thank you for choosing our supermarket.
+          We truly value your trust and support!
+          """)
+    
+
