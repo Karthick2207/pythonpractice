@@ -1,0 +1,87 @@
+print("Redbus")
+name=input("Enter your name : ")
+age=int(input("Enter your age : "))
+phone=input("Enter your phone number : ")
+mailid=input("Enter your mail-id : ")
+start=input("Enter your Point of departure : ")
+to=input("Enter your Destination : ")
+date=input("Enter the Date : ")
+passenger_count=int(input("Enter the passenger count : "))
+print("Available Buses " )
+print (f"""
+       1.Travels name : SRT Travels
+         Code         : 001
+         From and To  : {start} to {to}
+         Timing       : 8:45 AM
+         Hours        : 3:30 hrs
+
+       2.Travels name : SRM Travels
+         Code         : 002
+         From and To  : {start} to {to}
+         Timing       : 10:35 AM
+         Hours        : 3:40 hrs
+
+       3.Travels name : VEL Travels
+         Code         : 003
+         From and To  : {start} to {to}
+         Timing       : 1:15 PM
+         Hours        : 3:40 hrs
+         
+       4.Travels name : Vinayaka Travels
+         Code         : 004
+         From and To  : {start} to {to}
+         Timing       : 3:45 PM
+         Hours        : 3:50 hrs
+         
+       5.Travels name : Aspire Travels
+         Code         : 005
+         From and To  : {start} to {to}
+         Timing       : 9:50 PM
+         Hours        : 3:10 hrs
+         """)
+bus_options = {
+    1: "SRT Travels",
+    2: "SRM Travels",
+    3: "VEL Travels",
+    4: "Vinayaka Travels",
+    5: "Aspire Travels"
+}
+option=int(input("Enter your travels code : "))
+print("""
+        Welcome to {bus_options[option]} 
+        Available Seats :
+        UPPER : S1,S2,S3,S7,S9 (Rs:750/seat)
+        LOWER : L2,L4,L5,L6,L8,L9 (Rs:900/seat)
+        """)
+seats=input("Enter your selected seats : ")
+upper_price=750
+lower_price=950
+u1=0
+l1=0
+seats_list = seats.split(",");
+for it in seats_list:
+    if it.startswith("S"):
+        u1 += 1
+    elif it.startswith("L"): 
+        l1 += 1
+total=(u1*upper_price)+(l1*lower_price)
+total_with_gst = (0.18*total)+total
+print(f"Your seats are booked in {bus_options[option]} successfully. Charges :{total_with_gst}")
+print(f"""
+------------------------------------------------------------------------------
+                           TICKET CONFIRMATION
+------------------------------------------------------------------------------
+Name    : {name}             Age : {age}                 phone : {phone}
+
+From    : {start}            To  : {to}                  Date  : {date}
+
+No.of Passenger : {passenger_count}
+
+Seat Nos : {seats}
+
+Amount  : {total}(excluding gst)
+ 
+------------------- Thanks for choosing us! Happy Journey --------------------
+""")        
+ 
+         
