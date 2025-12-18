@@ -1,0 +1,15 @@
+import pandas as pd
+df = pd.read_csv(r"C:\Users\thara\OneDrive\Desktop\edunet\DATASETS\diabetes.csv")
+print(df)
+print(df.to_string())
+dog=pd.read_json(r"C:\Users\thara\OneDrive\Desktop\edunet\DATASETS\opendata.json")
+print(dog.to_string())
+print(dog.head(50))
+print(dog.tail(10))
+print(dog.info())
+
+import numpy as np
+imagecon=["java","python","machine learning","c++"]
+print(np.ndim(imagecon))
+academy=pd.Series(imagecon)
+print(np.ndim(academy))
